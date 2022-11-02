@@ -1,5 +1,3 @@
-import Cart from "../../../apis/Cart";
-
 export const addProductToCart = ({ commit, dispatch }, { product, quantity }) => {
     commit('addToCart', { product, quantity })
 
@@ -8,12 +6,6 @@ export const addProductToCart = ({ commit, dispatch }, { product, quantity }) =>
         type: 'success',
         message: "Product added to cart"
     },{root: true})
-}
-
-export const getCartItems = ({commit}) => {
-    Cart.all().then(response => {
-            commit('setCart', response.data)
-        })
 }
 
 export const removeProductFromCart = ({commit, dispatch}, product) => {
