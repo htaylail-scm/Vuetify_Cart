@@ -6,8 +6,7 @@
                 <p v-else class="">{{ item.product.title.substring(0,20)+"..."  }}</p>
                 <a href="#" class="remove-btn" @click.prevent="removeProductFromCart(item.product)">remove</a>
             </div>
-            {{ item.quantity }} x ${{ item.product.price }}   
-           
+            {{ item.quantity }} x ${{ item.product.price }}
             <hr>  
         </div> 
 
@@ -24,38 +23,19 @@
 import { mapState, mapGetters, mapActions } from "vuex";
 export default {
     computed: {
-       
-        //  ...mapState({
-        //    //state  > cart ( module name) > cart( state ka cart)
-        //     cart: ( state )=> state.cart.cart
-        // }),
-
-        // if use namespaced in moducle can write this way
-        // moducle name(product) and state with name product
         ...mapState("cart", [
             "cart"
         ]),
 
-        ...mapGetters('cart', ['cartTotalPrice'])
-
-        // same with differnt way
-        // ...mapGetters({
-        //     cartTotalPrice: "cart/cartTotalPrice"
-        // })        
-    },
-
-    mounted() {
-        this.getCartItems()
+        ...mapGetters('cart', ['cartTotalPrice'])     
     },
     
     methods: {
         ...mapActions('cart', [
             "removeProductFromCart",
             "clearCartItems",
-            "getCartItems"
         ])
-    }
-   
+    }   
 }
 </script>
 

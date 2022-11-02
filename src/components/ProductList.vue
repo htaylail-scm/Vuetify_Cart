@@ -11,23 +11,15 @@
 <script>
 import ProductCard from "./ProductCard";
 import { mapState, mapActions } from "vuex";
-import product from "@/store/modules/product";
 export default {
   components: {
     ProductCard,
   },
 
   computed: {
-    // ...mapState({
-    // state > module name > state mar shi dae  products
-    //   products: state => state.product.products,
-    // })
-
-    // if use namespaced in moducle can write this way
-    // moducle name(product) and state with name product
-    ...mapState("product", [
-      "products"
-    ]),
+    // if use namespaced in module can write this way
+    // module name(product) and state with name products
+    ...mapState("product", ["products"]),
   },
 
   mounted() {

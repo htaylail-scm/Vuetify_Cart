@@ -1,4 +1,4 @@
-export const addNotification = ({commit}, notification ) => {
+export const addNotification = ({ commit }, notification) => {
     commit ('pushNotification', notification)
 }
 

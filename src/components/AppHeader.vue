@@ -29,11 +29,6 @@ export default {
   components: {
     MiniCart,
   },
-  
-  // computed: mapGetters({
-  //   cartItemCount: 'cartItemCount'
-  // }),
-
   // same way => if same name also use 
   computed:{
     ...mapGetters('cart',[
